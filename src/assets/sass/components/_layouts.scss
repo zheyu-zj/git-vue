@@ -1,0 +1,49 @@
+html, body, #app {
+    height: 100%;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-width: $width;
+    overflow: hidden;
+    header {
+        height: 60px;
+        background: #324157;
+        .header-logo-a {
+            display: inline-block;
+            height: 60px;
+        }
+        .header-warp {
+            width: $width;
+            margin: $center-auto;
+        }
+        .header_logo {
+            margin: 10px 0;
+            height: 40px;
+        }
+    }
+    main {
+        flex: 1;
+    }
+    footer {
+        width: 100%;
+        background: #324157;
+        overflow: hidden;
+        .footer {
+            width: $width;
+            padding: 10px 0;
+            margin: $center-auto;
+            font-size: 12px;
+            color: #999;
+            overflow: hidden;
+            p {
+                width: 100%;
+                text-align: center;
+                line-height: 1.8;
+            }
+        }
+    }
+}

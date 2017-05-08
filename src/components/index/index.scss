@@ -1,0 +1,19 @@
+@import "../../assets/sass/main.scss";
+
+.main-warp {
+    width: $width;
+    margin: $center_auto;
+    .new-announcement {
+        line-height: 50px;
+        display: block;
+        text-align: center;
+        color: #f6ab25;
+    }
+    .table{
+        font-size:12px;
+        .tradeList-icon {
+            width: $icon-width;
+            height: $icon-height;
+        }
+    }
+}

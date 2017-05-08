@@ -1,0 +1,40 @@
+{
+    "index":[
+        {
+            "url": "https://ofybqrgr4.qnssl.com/dc.png",
+            "name": "钻石币(DC)",
+            "newPrice": "0.8145",
+            "volume24": "152581.4063",
+            "turnover24": "124765.0344",
+            "range24": "-2.79%",
+            "range7": "-11.16%"
+        },
+        {
+            "url": "https://ofybqrgr4.qnssl.com/images/oc_png.png",
+            "name": "海投币(OC)",
+            "newPrice": "0.3103",
+            "volume24": "664979.3125",
+            "turnover24": "124765.0344",
+            "range24": "-2.79%",
+            "range7": "-11.16%"
+        },
+        {
+            "url": "https://ofybqrgr4.qnssl.com/SEC-160.png",
+            "name": "钻石币(DC)",
+            "newPrice": "0.8145",
+            "volume24": "152581.4063",
+            "turnover24": "124765.0344",
+            "range24": "-2.79%",
+            "range7": "-11.16%"
+        },
+        {
+            "url": "https://ofybqrgr4.qnssl.com/yuanlogo3.png",
+            "name": "钻石币(DC)",
+            "newPrice": "0.8145",
+            "volume24": "152581.4063",
+            "turnover24": "124765.0344",
+            "range24": "-2.79%",
+            "range7": "-11.16%"
+        }
+    ]
+}
