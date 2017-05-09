@@ -9,7 +9,7 @@
             <a class="new-announcement" href="javascript:"><i class="el-icon-edit"></i>公告：关于文创币官方申请文创币取消每日10%涨跌幅限制公告</a>
             <el-row>
                 <el-col :span="18">
-                    <el-table class="table" :data="tableData" style="width: 100%" :default-sort="{prop: 'date',order: 'descending'}">
+                    <el-table class="table" :data="tableDatas" style="width: 100%" :default-sort="{prop: 'date',order: 'descending'}">
                         <el-table-column label="币名">
                             <template scope="scope">
                                 <img :src="scope.row.url" class="tradeList-icon">
@@ -37,18 +37,27 @@
     </div>
 </template>
 <script>
+    import Vue from 'vue'
     import axios from 'axios'
-    let datas;
-    axios.get('api/Index')
-        .then(function (response) {
-            datas = response.data
-        });
-
+    axios.defaults.baseURL = 'http://localhost:3000';
+    Vue.prototype.$http = axios;
+    const ERR_OK = 0;
     export default {
-        data(){
+        data () {
             return {
-                tableData: datas
+                tableDatas: ''
             }
+        },
+        created: function () {
+            this.$http.get('/json/index.json',{withCredentials:true}).then((response) => {
+                console.log(response);
+                console.log(response.index)
+//                response = response.data;
+//                if (response.errno === ERR_OK) {
+//                    this.tableDatas = response.data;
+//                    console.log(this.tableDatas)
+//                }
+            })
         }
     }
 </script>
