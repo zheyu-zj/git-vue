@@ -21,3 +21,9 @@ new Vue({
   template: '<App/>',
   components: { App }
 });
+
+const Vm = new Vue({
+   //选项对象:
+        //可以包含数据、模板、挂载元素、方法、生命周期钩子等选项
+
+});

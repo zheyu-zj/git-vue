@@ -9,27 +9,11 @@
             <a class="new-announcement" href="javascript:"><i class="el-icon-edit"></i>公告：关于文创币官方申请文创币取消每日10%涨跌幅限制公告</a>
             <el-row>
                 <el-col :span="18">
-                    <!--<el-table class="table" :data="tableDatas" style="width: 100%" :default-sort="{'prop':'date','order':'descending'}">-->
-                        <!--<el-table-column label="币名">-->
-                            <!--<template scope="scope">-->
-                                <!--<img :src="scope.row.url" class="tradeList-icon">-->
-                                <!--<span style="margin-left: 10px">{{ scope.row.name }}</span>-->
-                            <!--</template>-->
-                        <!--</el-table-column>-->
-                        <!--<el-table-column prop="newPrice" label="最新价格(CNY)" sortable>-->
-                        <!--</el-table-column>-->
-                        <!--<el-table-column prop="volume24" label="24H成交量" sortable>-->
-                        <!--</el-table-column>-->
-                        <!--<el-table-column prop="turnover24" label="24H成交额(CNY)" sortable>-->
-                        <!--</el-table-column>-->
-                        <!--<el-table-column prop="range24" label="24H涨跌" sortable>-->
-                        <!--</el-table-column>-->
-                        <!--<el-table-column prop="range7" label="7D涨跌" sortable>-->
-                        <!--</el-table-column>-->
-                    <!--</el-table>-->
+                    <CurrencyList></CurrencyList>
                 </el-col>
                 <el-col :span="6">
                     <a href="javascript:">
+                        adas的撒多阿萨德是啊
                     </a>
                 </el-col>
             </el-row>
@@ -37,24 +21,10 @@
     </div>
 </template>
 <script>
-//    import Vue from 'vue'
-//    import axios from 'axios'
-//    Vue.prototype.$http = axios;
-//    const ERR_OK = 200;
+    import CurrencyList from './Currency-list/Currency-list.vue'
     export default {
-//        data () {
-//            return {
-//                tableDatas: ''
-//            }
-//        },
-//        created: function () {
-//            this.$http.get('/json/index.json').then((response) => {
-//                if (response.data === ERR_OK) {
-//                    this.tableDatas = response.data.index;
-//                }
-//            })
-//        }
-    }   
+        components: {CurrencyList}
+    }
 </script>
 
 <style lang="scss">
