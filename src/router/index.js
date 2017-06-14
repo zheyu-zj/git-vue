@@ -16,42 +16,34 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Index',
-            component: Index
+            component: Index,
         },
         {
             path: '/ico',
-            name: 'Ico',
             component: Ico
         },
         {
             path: '/trade',
-            name: 'Trade',
             component: Trade
         },
         {
             path: '/financial',
-            name: 'Financial',
             component: Financial
         },
         {
             path: '/security',
-            name: 'Security',
             component: Security
         },
         {
             path: '/guide',
-            name: 'Guide',
             component: Guide
         },
         {
             path: '/login',
-            name: 'Login',
             component: Login
         },
         {
             path: '/registered',
-            name: 'Registered',
             component: Registered
         }
     ]

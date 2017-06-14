@@ -1,4 +1,4 @@
-@import "../../assets/sass/main.scss";
+@import "../../assets/sass/components/variables";
 
 .main-warp {
     width: $width;
@@ -9,11 +9,123 @@
         text-align: center;
         color: #f6ab25;
     }
-    .table{
-        font-size:12px;
-        .tradeList-icon {
-            width: $icon-width;
-            height: $icon-height;
+    .table {
+        font-size: 12px;
+    }
+    .icon {
+        width: $icon-width;
+        height: $icon-height;
+        vertical-align: middle;
+    }
+    .sorting_warp {
+        border: 1px solid #ebebeb;
+        .sorting {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid #ebebeb;
+            & > h3 {
+                font-size: 16px;
+                color: #555;
+                line-height: 40px;
+                text-indent: 47px;
+            }
+            & > div {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                p {
+                    box-sizing: border-box;
+                    width: 75px;
+                    height: 25px;
+                    line-height: 25px;
+                    color: #555;
+                    text-indent: 8px;
+                    border: 1px solid #ebebeb;
+                    border-radius: 3px;
+                    .el-icon-caret-bottom {
+                        text-indent: 3px;
+                    }
+                }
+                ul {
+                    //display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    list-style-type: none;
+                    width: 75px;
+                    height: 51px;
+                    box-sizing: border-box;
+                    padding: 7px 0;
+                    border: 1px solid #ebebeb;
+                    color: #555;
+                    background: #ffffff;
+                    border-radius: 3px;
+                    & > li {
+                        width: 100%;
+                        line-height: 18px;
+                        font-size: 12px;
+                        text-align: center;
+                        &:hover {
+                            background: #f6ab25;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .ol_list {
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 20px;
+            & > li {
+                height: 40px;
+                line-height: 40px;
+                &:hover {
+                    background: #f7f7f7;
+                }
+                & > p {
+                    padding-right: 10px;
+                    span:last-of-type {
+                        float: right;
+                        &.red {
+                            color: #e84a64;
+                        }
+                        &.green {
+                            color: #00a8ac;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+.project-warp{
+    width:100%;
+    height:449px;
+    background: #f3f3f3;
+    .project-main{
+        width: $width;
+    }
+    h2{
+        text-align: center;
+        font-size:24px;
+        height:62px;
+        line-height:62px;
+    }
+    .project-more{
+        display: block;
+        width:124px;
+        box-sizing: border-box;
+        padding:10px 20px;
+        font-size:14px;
+        border-radius:6px;
+        color: #ffffff;
+        background: #cacaca;
+        margin:28px auto;
+        &:hover{
+            background: #f6ab25;
         }
     }
 }

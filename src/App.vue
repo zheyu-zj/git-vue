@@ -25,7 +25,7 @@
                         </el-menu>
                     </el-col>
                     <el-col :span="4">
-                        <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
+                        <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
                             <el-menu-item index="/login" class="">登录</el-menu-item>
                             <el-menu-item index="/registered">注册</el-menu-item>
                         </el-menu>
@@ -52,17 +52,27 @@
         name: 'hello',
         data() {
             return {
-                activeIndex: '1',
-                activeIndex2: '1'
+                activeIndex: '/',
             };
         },
         methods: {
+            load(){
+                this.$store.dispatch('get_coin_list');
+                this.$store.dispatch('get_project_list');
+            },
             handleSelect(key, keyPath) {
                 console.log(key, keyPath);
             }
-        }
+        },
+        created(){
+            this.load();
+        },
+        watch: {
+            '$route': 'load'
+        },
     }
 </script>
 
-<style>
+<style lang="scss">
+    @import "./assets/sass/main.scss";
 </style>

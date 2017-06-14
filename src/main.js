@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import router from './router'
+import store from './vuex'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -12,18 +13,15 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI);
 
 import App from './App'
+
+import mock from '../mock'
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
-});
-
-const Vm = new Vue({
-   //选项对象:
-        //可以包含数据、模板、挂载元素、方法、生命周期钩子等选项
-
 });
