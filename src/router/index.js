@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/index/index'
-import Trade from '@/components/trade/trade'
+import Trade from '@/components/trade/index'
 import Ico from '@/components/ico/ico'
 import Financial from '@/components/financial/financial'
 import Security from '@/components/security/security'
@@ -23,7 +23,7 @@ export default new Router({
             component: Ico
         },
         {
-            path: '/trade',
+            path: '/trade/:id',
             component: Trade
         },
         {

@@ -1,15 +1,19 @@
 <template>
     <div class="project">
-        <a href="">
-            <img src="" alt="">
-            <p class="achieve">{{ state }}</p>
-            <h6>{{ title }}</h6>
+        <a :href="allProject.href">
+            <img :src="allProject.img">
+            <p v-if="allProject.state === 1" class="underway">进行中</p>
+            <p v-if="allProject.state === 2" class="achieve">已完成</p>
+            <p v-if="allProject.state === 3" class="preheat">暂停中</p>
+            <p v-if="allProject.state === 4" class="suspend">预热中</p>
+            <p v-if="allProject.state === 5" class="achieve">申请中</p>
+            <h6>{{ allProject.title }}</h6>
             <div>
                 <p>
-                    <span>{{ copies }}</span><br>
+                    <span>{{ allProject.target }}</span><br>
                     ICO目标
                 <p>
-                    <span>{{ plan }}</span><br>
+                    <span>{{ allProject.plat }}%</span><br>
                     已募集
                 </p>
             </div>
@@ -20,12 +24,10 @@
 <script>
     export default {
         data(){
-            return {
-                state:'已完成',
-                title:'钻石币ICO',
-                copies:'200份',
-                plan:'100.00%',
-            }
+            return {}
+        },
+        props: {
+            allProject: [Object]
         }
     }
 </script>

@@ -1,6 +1,9 @@
 import Mock from 'mockjs';
-import {allInformation} from './mock.addInformation';
+import {allInformation} from './mock.allInformation';
 import {allProject} from './mock.allProject';
+import {information} from './mock.information';
+import {dynamic} from './mock.dynamic';
+import {announcement} from './mock.announcement';
 
 function addToMock(list) {
     list.forEach(list => {
@@ -10,5 +13,8 @@ function addToMock(list) {
 
 addToMock(allInformation);
 addToMock(allProject);
+addToMock(information);
+addToMock(dynamic);
+addToMock(announcement);
 
 export default Mock;

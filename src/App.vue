@@ -10,14 +10,13 @@
                         <!--<div class="grid-content bg-purple-dark"></div>-->
                     </el-col>
                     <el-col :span="14">
-                        <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
+                        <el-menu theme="dark" :default-active="`/activeIndex`" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
                             <el-menu-item index="/">首页</el-menu-item>
                             <el-submenu index="/trade">
                                 <template slot="title">交易中心</template>
-                                <el-menu-item index="/trade/1">钻石币</el-menu-item>
-                                <el-menu-item index="/trade/2">莱特币</el-menu-item>
-                                <el-menu-item index="/trade/3">比特币</el-menu-item>
+                                <el-menu-item v-for="(name, index) in coinList" :index="`/trade/${index}`" :key="name.abbreviations">{{ name.name }}</el-menu-item>
                             </el-submenu>
+                            <!--<el-menu-item index="/trade/:id">交易中心</el-menu-item>-->
                             <el-menu-item index="/ico">ICO中心</el-menu-item>
                             <el-menu-item index="/financial">财务中心</el-menu-item>
                             <el-menu-item index="/security">安全中心</el-menu-item>
@@ -48,6 +47,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex';
     export default {
         name: 'hello',
         data() {
@@ -55,21 +55,26 @@
                 activeIndex: '/',
             };
         },
-        methods: {
-            load(){
-                this.$store.dispatch('get_coin_list');
-                this.$store.dispatch('get_project_list');
-            },
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            }
-        },
         created(){
             this.load();
         },
         watch: {
             '$route': 'load'
         },
+        computed: {
+            ...mapState({
+                coinList: state => state.coinList.coinList,
+            })
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+//                console.log(key, keyPath);
+            },
+            load(){
+                this.$store.dispatch('get_coin_list');
+                this.activeIndex = this.$route.path.split('/')[1];
+            }
+        }
     }
 </script>
 

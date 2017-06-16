@@ -60,31 +60,54 @@
         <div class="project-warp">
             <h2>ICO项目</h2>
             <el-row :gutter="20" style="margin: 0 auto;" class="project-main">
-                <el-col :span="6">
-                    <Icopriject></Icopriject>
-                </el-col>
-                <el-col :span="6">
-                    <Icopriject></Icopriject>
-                </el-col>
-                <el-col :span="6">
-                    <Icopriject></Icopriject>
-                </el-col>
-                <el-col :span="6">
-                    <Icopriject></Icopriject>
+                <el-col :span="6" v-for="(data, index) in allProject" :key="data.id" v-if="index < 4">
+                    <Icopriject :allProject="data"></Icopriject>
                 </el-col>
             </el-row>
             <a class="project-more">查看更多项目</a>
+        </div>
+        <div class="news-warp">
+            <el-row style="margin: 0 auto;" class="news-main">
+                <el-col :span="12" class="news-box">
+                    <div class="news-h5">
+                        <h5><i class="el-icon-document"></i>链金网公告</h5>
+                        <a href="JavaScript:">更多>></a>
+                    </div>
+                    <newsTitle :news_list="announcement"></newsTitle>
+                </el-col>
+                <el-col :span="6" class="news-box">
+                    <div class="news-h5">
+                        <h5><i class="el-icon-document"></i>项目动态</h5>
+                        <a href="JavaScript:">更多>></a>
+                    </div>
+                    <newsTitle :news_list="dynamic"></newsTitle>
+                </el-col>
+                <el-col :span="6" class="news-box">
+                    <div class="news-h5">
+                        <h5><i class="el-icon-document"></i>行业资讯</h5>
+                        <a href="JavaScript:">更多>></a>
+                    </div>
+                    <newsTitle :news_list="information"></newsTitle>
+                </el-col>
+            </el-row>
         </div>
     </div>
 </template>
 <script>
     import {mapState} from 'vuex';
     import Icopriject from './Icopriject/index.vue';
+    import newsTitle from './newsTitle/index.vue';
 
     export default {
         components: {
             Icopriject,
-            prop:['allProject']
+            newsTitle
+        },
+        created(){
+            this.load();
+        },
+        watch: {
+            '$route': 'load'
         },
         data () {
             return {
@@ -97,6 +120,9 @@
             ...mapState({
                 coinList: state => state.coinList.coinList,
                 allProject: state => state.allProject.allProject,
+                announcement: state => state.announcement.announcement,
+                dynamic: state => state.dynamic.dynamic,
+                information: state => state.information.information,
             }),
             brief: function () {
                 if (this.ok === true) {
@@ -133,6 +159,13 @@
             },
         },
         methods: {
+            load(){
+                this.$store.dispatch('get_coin_list');
+                this.$store.dispatch('get_project_list');
+                this.$store.dispatch('get_announcement');
+                this.$store.dispatch('get_dynamic');
+                this.$store.dispatch('get_information');
+            },
             options(){
                 if (this.ul === true) {
                     this.ul = false;

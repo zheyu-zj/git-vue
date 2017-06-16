@@ -6,10 +6,10 @@ html, body{
 }
 
 #app {
+    min-height:100%;
     display: flex;
     flex-direction: column;
     min-width: $width;
-    overflow: hidden;
     header {
         height: 60px;
         background: #324157;

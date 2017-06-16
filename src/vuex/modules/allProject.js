@@ -9,8 +9,7 @@ const state = {
 
 const mutations = {
     set_project_list(state, {info}){
-        state.allProject = info.data
-        console.log(info.data)
+        state.allProject = info.data;
     }
 };
 
@@ -25,7 +24,8 @@ const actions = {
             })
         })
     }
-}
+};
+
 export default {
     state,mutations,actions
 }
